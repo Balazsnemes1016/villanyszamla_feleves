@@ -14,6 +14,12 @@
     <div class="mb-3">
         <label for="price" class="form-label">Egységár (Ft/kWh):</label> <!--maga az ar megadasa-->
         <input type="number" id="price" class="form-control" required placeholder="pl. 36.386"> <!--pelda irasa es maga az input-->
-    
+    </div>
+
+    <!--Matrix input resze-->
+    <div class="mb-3">
+        <label for="matrix" class="form-label">Fogyasztási adatok (CSV formátum, év oszlopokkal):</label> <!--ez maga a leiras hozza-->
+        <textarea id="matrix" class="form-control" rows="10" required placeholder="2020,2021,2022&#10;108,69,217&#10;..."></textarea>
+    </div> <!-- 10 soros matrix letrehozasa es peldaertekek beleirasa segitsegkepp-->
 </body>
 </html>
