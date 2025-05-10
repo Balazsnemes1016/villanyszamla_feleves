@@ -20,4 +20,16 @@ document.getElementById("calculateBtn").addEventListener("click", async () => { 
           });
           
   
-      
+      if (!response.ok) {
+        throw new Error("Hibás válasz a szervertől");
+      }
+  
+      const data = await response.json();
+      renderTable(data);
+  
+    } catch (error) {
+      alert("Hiba történt: " + error.message);
+    }
+  });
+  
+  
