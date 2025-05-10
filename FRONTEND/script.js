@@ -32,4 +32,15 @@ document.getElementById("calculateBtn").addEventListener("click", async () => { 
     }
   });
   
+  function renderTable(data) {
+    const { haviDijak, evesDijak, kedvezmenyesEvek } = data;
+    const honapok = [
+      "Január", "Február", "Március", "Április", "Május", "Június",
+      "Július", "Augusztus", "Szeptember", "Október", "November", "December"
+    ];
+  
+    const evek = Object.keys(haviDijak);
+    const table = document.getElementById("resultTable");
+    table.innerHTML = "";
+  
   
