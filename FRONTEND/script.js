@@ -7,9 +7,17 @@ document.getElementById("calculateBtn").addEventListener("click", async () => { 
       return; // ellenorzes hogy a megadott adat ervenyes 
     }
   
-    const payload = {
+    const payload = { //Backendnek ertekatadas
       unitPrice: price,
       matrix: matrixText
     };
   
-    
+    try {
+        const response = await fetch("https://localhost:7171/api/villanyszamla/szamitas", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+          
+  
+      
