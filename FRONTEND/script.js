@@ -2,4 +2,9 @@ document.getElementById("calculateBtn").addEventListener("click", async () => { 
     const price = parseFloat(document.getElementById("price").value);
     const matrixText = document.getElementById("matrix").value;
   
+    if (isNaN(price) || !matrixText.trim()) {
+      alert("Adj meg érvényes egységárat és fogyasztási adatokat!");
+      return; // ellenorzes hogy a megadott adat ervenyes 
+    }
+  
     
