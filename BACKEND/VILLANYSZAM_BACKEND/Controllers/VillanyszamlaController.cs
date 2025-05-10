@@ -1,6 +1,18 @@
-﻿namespace VILLANYSZAM_BACKEND.Controllers
+﻿using Microsoft.AspNetCore.Mvc;
+using VillanyszamlaBackend.Models;
+using System.Collections.Generic;
+using System.Globalization;
+
+namespace VillanyszamlaBackend.Controllers
 {
-    public class VillanyszamlaController
+    [ApiController]
+    [Route("api/[controller]")]
+    public class VillanyszamlaController : ControllerBase
     {
-    }
-}
+        [HttpPost("szamitas")]
+        public ActionResult<SzamitasValasz> Szamitas([FromBody] SzamitasInput input)
+        {
+            const double rendszerDij = 23.4;
+
+           
+
