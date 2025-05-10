@@ -5,4 +5,40 @@ body {
   margin: 20px;
 }
 
+.table {
+  width: 100%;
+  border-collapse: collapse; 
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.table th,
+.table td {
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.table th {
+  background-color: #4a69bd;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.table-success {
+  background-color: #c3f7d5;
+  font-weight: bold;
+}
+
+.table-success-col {
+  background-color: #c3f7d5 !important;
+}
 
