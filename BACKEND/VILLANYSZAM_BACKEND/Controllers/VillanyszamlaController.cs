@@ -41,4 +41,55 @@ namespace VillanyszamlaBackend.Controllers
                 }
             }
 
-            
+            // Első körben kiszámoljuk a havi díjakat kedvezmény nélkül
+            foreach (var ev in evek)
+            {
+                foreach (var fogyasztas in fogyasztasAdatok[ev])
+                {
+                    double dij = fogyasztas * input.UnitPrice + rendszerDij;
+                    haviDijak[ev].Add(dij);
+                }
+            }
+
+            // Éves díjak kiszámítása
+            var evesDijak = new Dictionary<string, double>();
+            foreach (var ev in evek)
+            {
+                evesDijak[ev] = haviDijak[ev].Sum();
+            }
+
+            // Kedvezmény meghatározása
+            var kedvezmenyesEvek = new List<int>();
+            for (int i = 0; i < evek.Count - 2; i++)
+            {
+                string ev1 = evek[i];
+                string ev2 = evek[i + 1];
+                string ev3 = evek[i + 2];
+
+                if (evesDijak[ev1] > 350000 && evesDijak[ev2] > 350000)
+                {
+                    kedvezmenyesEvek.Add(int.Parse(ev3));
+
+                    // Újraszámolás 13% kedvezménnyel
+                    haviDijak[ev3].Clear();
+                    foreach (var fogyasztas in fogyasztasAdatok[ev3])
+                    {
+                        double kedvDij = (fogyasztas * input.UnitPrice + rendszerDij) * 0.87;
+                        haviDijak[ev3].Add(kedvDij);
+                    }
+
+                    // Újra kiszámoljuk az évi összegét
+                    evesDijak[ev3] = haviDijak[ev3].Sum();
+                }
+            }
+
+            return Ok(new SzamitasValasz
+            {
+                HaviDijak = haviDijak,
+                EvesDijak = evesDijak,
+                KedvezmenyesEvek = kedvezmenyesEvek
+            });
+        }
+    }
+}
+
