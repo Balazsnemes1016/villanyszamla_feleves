@@ -1,5 +1,5 @@
 
-namespace Villanyszamla_backend
+namespace VILLANYSZAM_BACKEND
 {
     public class Program
     {

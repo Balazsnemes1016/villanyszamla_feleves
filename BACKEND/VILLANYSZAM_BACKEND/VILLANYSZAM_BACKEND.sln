@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Villanyszamla_backend", "Villanyszamla_backend\Villanyszamla_backend.csproj", "{FD41C4F5-3669-4803-8B96-813BA046AD5D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VILLANYSZAM_BACKEND", "VILLANYSZAM_BACKEND.csproj", "{27847810-F5E7-4F36-B827-5A319D9775F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FD41C4F5-3669-4803-8B96-813BA046AD5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FD41C4F5-3669-4803-8B96-813BA046AD5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FD41C4F5-3669-4803-8B96-813BA046AD5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FD41C4F5-3669-4803-8B96-813BA046AD5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27847810-F5E7-4F36-B827-5A319D9775F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27847810-F5E7-4F36-B827-5A319D9775F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27847810-F5E7-4F36-B827-5A319D9775F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27847810-F5E7-4F36-B827-5A319D9775F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D9506E6C-AE9D-4E6E-9058-634E880ACE8A}
+		SolutionGuid = {A47BA85F-49AB-4FC4-8B97-51595A88D8EE}
 	EndGlobalSection
 EndGlobal

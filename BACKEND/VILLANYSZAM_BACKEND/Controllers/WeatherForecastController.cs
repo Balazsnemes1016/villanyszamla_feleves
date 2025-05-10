@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Villanyszamla_backend.Controllers
+namespace VILLANYSZAM_BACKEND.Controllers
 {
     [ApiController]
     [Route("[controller]")]
