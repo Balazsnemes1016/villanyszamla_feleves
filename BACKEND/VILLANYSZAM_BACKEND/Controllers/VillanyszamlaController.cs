@@ -29,4 +29,16 @@ namespace VillanyszamlaBackend.Controllers
                 fogyasztasAdatok[ev] = new List<double>();
             }
 
+            // Bemeneti fogyasztási adatok szétosztása
+            for (int i = 1; i < lines.Count; i++)
+            {
+                var sor = lines[i].Split(',').Select(s => double.Parse(s.Trim(), CultureInfo.InvariantCulture)).ToList();
+                for (int j = 0; j < sor.Count; j++)
+                {
+                    string ev = evek[j];
+                    double fogyasztas = sor[j];
+                    fogyasztasAdatok[ev].Add(fogyasztas);
+                }
+            }
+
             
