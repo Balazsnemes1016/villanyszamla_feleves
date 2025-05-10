@@ -43,4 +43,33 @@ document.getElementById("calculateBtn").addEventListener("click", async () => { 
     const table = document.getElementById("resultTable");
     table.innerHTML = "";
   
+    
+    // Fejléc
+    const headerRow = document.createElement("tr");
+    headerRow.innerHTML = `<th>Hónap</th>` + evek.map(ev => {
+      const cls = kedvezmenyesEvek.includes(parseInt(ev)) ? "table-success-col" : "";
+      return `<th class="${cls}">${ev}</th>`;
+    }).join("");
+    table.appendChild(headerRow);
+  
+    // Havi sorok
+    for (let i = 0; i < 12; i++) {
+      const row = document.createElement("tr");
+      row.innerHTML = `<th>${honapok[i]}</th>` + evek.map(ev => {
+        const value = haviDijak[ev][i].toFixed(2) + " Ft";
+        const cls = kedvezmenyesEvek.includes(parseInt(ev)) ? "table-success-col" : "";
+        return `<td class="${cls}">${value}</td>`;
+      }).join("");
+      table.appendChild(row);
+    }
+  
+    // Éves összeg
+    const totalRow = document.createElement("tr");
+    totalRow.innerHTML = `<th>Éves összesen</th>` + evek.map(ev => {
+      const value = evesDijak[ev].toFixed(2) + " Ft";
+      const cls = kedvezmenyesEvek.includes(parseInt(ev)) ? "table-success-col fw-bold" : "fw-bold";
+      return `<td class="${cls}">${value}</td>`;
+    }).join("");
+    table.appendChild(totalRow);
+  }
   
