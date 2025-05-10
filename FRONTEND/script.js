@@ -7,4 +7,9 @@ document.getElementById("calculateBtn").addEventListener("click", async () => { 
       return; // ellenorzes hogy a megadott adat ervenyes 
     }
   
+    const payload = {
+      unitPrice: price,
+      matrix: matrixText
+    };
+  
     
