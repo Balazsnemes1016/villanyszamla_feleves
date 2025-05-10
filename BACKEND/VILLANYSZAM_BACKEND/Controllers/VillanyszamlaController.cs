@@ -14,5 +14,19 @@ namespace VillanyszamlaBackend.Controllers
         {
             const double rendszerDij = 23.4;
 
-           
+            var lines = input.Matrix.Split('\n', '\r')
+                .Where(line => !string.IsNullOrWhiteSpace(line))
+                .Select(line => line.Trim())
+                .ToList();
 
+            var evek = lines[0].Split(',').Select(ev => ev.Trim()).ToList();
+            var haviDijak = new Dictionary<string, List<double>>();
+            var fogyasztasAdatok = new Dictionary<string, List<double>>();
+
+            foreach (var ev in evek)
+            {
+                haviDijak[ev] = new List<double>();
+                fogyasztasAdatok[ev] = new List<double>();
+            }
+
+            
