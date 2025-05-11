@@ -13,7 +13,7 @@ document.getElementById("calculateBtn").addEventListener("click", async () => { 
     };
   
     try {
-        const response = await fetch("https://localhost:7171/api/villanyszamla/szamitas", {
+        const response = await fetch("https://localhost:7208/api/villanyszamla/szamitas", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload)
