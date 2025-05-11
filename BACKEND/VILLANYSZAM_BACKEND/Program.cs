@@ -1,36 +1,31 @@
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
-namespace VILLANYSZAM_BACKEND
+var builder = WebApplication.CreateBuilder(args);
+
+// 🔹 CORS engedélyezés
+builder.Services.AddCors(options =>
 {
-    public class Program
+    options.AddPolicy("AllowAll", builder =>
     {
-        public static void Main(string[] args)
-        {
-            var builder = WebApplication.CreateBuilder(args);
+        builder.AllowAnyOrigin()
+               .AllowAnyHeader()
+               .AllowAnyMethod();
+    });
+});
 
-            // Add services to the container.
+// 🔹 Kontroller szolgáltatás regisztrálása
+builder.Services.AddControllers();
 
-            builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+var app = builder.Build();
 
-            var app = builder.Build();
+// 🔹 CORS használata
+app.UseCors("AllowAll");
 
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
+// 🔹 Routing és kontroller aktiválása
+app.UseRouting();
+app.UseAuthorization();
+app.MapControllers();
 
-            app.UseHttpsRedirection();
-
-            app.UseAuthorization();
-
-
-            app.MapControllers();
-
-            app.Run();
-        }
-    }
-}
+app.Run();
