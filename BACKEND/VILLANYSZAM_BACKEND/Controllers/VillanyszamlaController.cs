@@ -82,7 +82,7 @@ namespace VillanyszamlaBackend.Controllers
                     evesDijak[ev3] = haviDijak[ev3].Sum();
                 }
             }
-
+            
             return Ok(new SzamitasValasz
             {
                 HaviDijak = haviDijak,
